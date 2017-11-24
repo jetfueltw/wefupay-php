@@ -32,7 +32,7 @@ $result = $payment->order($tradeNo, $channel, $amount, $clientIp, $notifyUrl);
 ```
 Result:
 [
-    'interface_version' => 'V3.3', // 接口版本
+    'interface_version' => 'V3.1', // 接口版本
     'merchant_code' => '1XXXXXXXX6', // 商家號
     'order_amount'=> '1.00'; // 消費金額 (元)
     'order_no'=>'20170101235959XXX', // 商家產生的唯一訂單號
@@ -59,7 +59,7 @@ Result:
 ```
 Post Data:
 [
-    'interface_version' => 'V3.3', // 接口版本
+    'interface_version' => 'V3.0', // 接口版本
     'merchant_code' => '1XXXXXXXX6', // 商家號
     'orginal_money' => '1.00', // 消費金額 (元)
     'order_amount' => '1.00', // 實際支付金額 (元)

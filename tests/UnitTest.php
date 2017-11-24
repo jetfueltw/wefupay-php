@@ -39,8 +39,6 @@ class UnitTest extends TestCase
         $payment = new DigitalPayment($this->merchantId, $this->merchantPrivateKey);
         $result = $payment->order($tradeNo, $channel, $amount, $clientIp, $notifyUrl);
 
-        var_dump($result);
-
         $this->assertEquals('0', $result['result_code']);
 
         return $tradeNo;
