@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false"
+         syntaxCheck="false">
+    <testsuites>
+        <testsuite name="Test Suite">
+            <directory suffix=".php">./tests/</directory>
+        </testsuite>
+    </testsuites>
+    <php>
+        <env name="MERCHANT_ID" value="108001002002"/>
+        <env name="MERCHANT_PRIVATE_KEY" value="-----BEGIN PRIVATE KEY-----&#10;MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAJB7DFWoipYYfB3S&#10;euSrcKQfbQIKd7dHKk9W9IdlsIgAFeL09Z35pC48mxRhtxwbqA8Ert2E1AtyfXDa&#10;jd9zLJwc2dgXc5P50d+3TauoymHoYs7gTSrwal4A95F1cswWqU1DIsuatPs2b8wO&#10;dg/3dDqBLWtoiCe04TY8epGj2AMDAgMBAAECgYEAjFcpzQ6wx0kzTpiEDRjGinWI&#10;IkJetSWoYHbbgaVySziiCdndtzylkNAH501fWys2HJh07vG2MwRb+sIgqxsqCWBn&#10;VTlKMcr70bniEsKQrUqZ8dI9naSbhZBbmaoourm94zVy+3tYyUmnogfl5MQZSSxJ&#10;3FKTlVwYeC0L81BPcEECQQDs8dGIC5KCfs2ZcuVlsGY/uvV0VktUadN+uE2l53Wy&#10;1J19F56JBkC/2PI6QOkqyukaTAvX6bNukDR3dGHzJyPjAkEAnBmYYO3QeOws+hfE&#10;1PocG0kVKtXpCepC+/JoRBNayZpEfh6i0bNXqLZvusCWfI/6Ve8WgopSvL12tOTK&#10;eU8OYQJASMDbgHVlMBJ1WMeRrk6iprDmSylwCeRQn1lB5k4Ssq1cChvlftdfrEiV&#10;39MshQo21u9At7Q3dxxqL7+Zj8qV1wJAdnY6HHz9c3cQHu9A0bvI7rAEn1BcnMip&#10;8tegZuElSc+H4QpQ18E5afChU+FpkrgU63gY5hIg/djuqBLk0TC8oQJAYI5yPg5n&#10;cyhqVR9IardzSSoQjXxoPq0Iuciaa5132O2k48Wo7Mdv9IwQW7rlKv5r4lL3ppdK&#10;YtuE+lVUyDTXIA==&#10;-----END PRIVATE KEY-----"/>
+        <env name="HTTP_REFERER" value="https://www.tencent.com"/>
+    </php>
+</phpunit>
