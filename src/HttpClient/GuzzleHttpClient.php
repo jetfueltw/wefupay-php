@@ -12,11 +12,6 @@ class GuzzleHttpClient implements HttpClientInterface
     private $baseUrl;
 
     /**
-     * @var null|string
-     */
-    private $httpReferer;
-
-    /**
      * @var \GuzzleHttp\Client
      */
     private $client;
@@ -25,12 +20,10 @@ class GuzzleHttpClient implements HttpClientInterface
      * GuzzleHttpClient constructor.
      *
      * @param string $baseUrl
-     * @param null|string $httpReferer
      */
-    public function __construct($baseUrl, $httpReferer)
+    public function __construct($baseUrl)
     {
         $this->baseUrl = rtrim($baseUrl, '/').'/';
-        $this->httpReferer = $httpReferer;
         $this->client = new Client();
     }
 
@@ -46,10 +39,6 @@ class GuzzleHttpClient implements HttpClientInterface
         $headers = [
             'User-Agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
         ];
-        if ($this->httpReferer !== null) {
-            $headers['Referer'] = $this->httpReferer;
-        }
-
         $response = $this->client->post($this->baseUrl.$uri, [
             'headers'     => $headers,
             'form_params' => $data,

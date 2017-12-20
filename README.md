@@ -133,16 +133,15 @@ bool(true|false)
 ```
 $merchantId = '1XXXXXXXX6'; // 商家號
 $merchantPrivateKey = '-----BEGIN PRIVATE KEY-----XXX-----END PRIVATE KEY-----'; // 商家私鑰
-$httpReferer = 'https://xxx.xxx.xxx'; // 在平台設定的允許接入域名
 $tradeNo = '20170101235959XXX'; // 商家產生的唯一訂單號
 $bank = Bank::PSBC; // 銀行編號
 $amount = 1.00; // 消費金額 (元)
-$clientIp = 'XXX.XXX.XXX.XXX'; // 消費者端 IP 位址
 $notifyUrl = 'https://XXX.XXX.XXX'; // 交易完成後異步通知接口
+(選填) $returnUrl = 'https://XXX.XXX.XXX'; // 交易完成後會跳轉到這個頁面
 ```
 ```
-$payment = new BankPayment($merchantId, $merchantPrivateKey, $httpReferer);
-$result = $payment->order($tradeNo, $bank, $amount, $clientIp, $notifyUrl);
+$payment = new BankPayment($merchantId, $merchantPrivateKey);
+$result = $payment->order($tradeNo, $bank, $amount, $notifyUrl, $returnUrl);
 ```
 ```
 Result:

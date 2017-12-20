@@ -8,9 +8,8 @@ interface HttpClientInterface
      * HttpClientInterface constructor.
      *
      * @param string $baseUrl
-     * @param null|string $httpReferer
      */
-    public function __construct($baseUrl, $httpReferer);
+    public function __construct($baseUrl);
 
     /**
      * POST request.

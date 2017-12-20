@@ -27,11 +27,6 @@ class Payment
     protected $baseApiUrl;
 
     /**
-     * @var string|null
-     */
-    protected $httpReferer;
-
-    /**
      * @var \Jetfuel\Wefupay\HttpClient\HttpClientInterface
      */
     protected $httpClient;
@@ -42,16 +37,14 @@ class Payment
      * @param string $merchantId
      * @param string $privateKey
      * @param string $baseApiUrl
-     * @param null|string $httpReferer
      */
-    protected function __construct($merchantId, $privateKey, $baseApiUrl = null, $httpReferer = null)
+    protected function __construct($merchantId, $privateKey, $baseApiUrl = null)
     {
         $this->merchantId = $merchantId;
         $this->privateKey = $privateKey;
         $this->baseApiUrl = $baseApiUrl === null ? self::BASE_API_URL : $baseApiUrl;
-        $this->httpReferer = $httpReferer;
 
-        $this->httpClient = new GuzzleHttpClient($this->baseApiUrl, $this->httpReferer);
+        $this->httpClient = new GuzzleHttpClient($this->baseApiUrl);
     }
 
     /**

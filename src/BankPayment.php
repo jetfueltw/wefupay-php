@@ -15,14 +15,13 @@ class BankPayment extends Payment
      *
      * @param string $merchantId
      * @param string $privateKey
-     * @param null|string $httpReferer
      * @param null|string $baseApiUrl
      */
-    public function __construct($merchantId, $privateKey, $httpReferer = null, $baseApiUrl = null)
+    public function __construct($merchantId, $privateKey, $baseApiUrl = null)
     {
         $baseApiUrl = $baseApiUrl === null ? self::BASE_API_URL : $baseApiUrl;
 
-        parent::__construct($merchantId, $privateKey, $baseApiUrl, $httpReferer);
+        parent::__construct($merchantId, $privateKey, $baseApiUrl);
     }
 
     /**
