@@ -6,10 +6,9 @@ use Jetfuel\Wefupay\HttpClient\GuzzleHttpClient;
 
 class Payment
 {
-    const BASE_API_URL = 'https://api.wefupay.com/';
-    const TIME_ZONE    = 'Asia/Shanghai';
-    const TIME_FORMAT  = 'Y-m-d H:i:s';
-    const SIGN_TYPE    = 'RSA-S';
+    const TIME_ZONE   = 'Asia/Shanghai';
+    const TIME_FORMAT = 'Y-m-d H:i:s';
+    const SIGN_TYPE   = 'RSA-S';
 
     /**
      * @var string
@@ -38,11 +37,11 @@ class Payment
      * @param string $privateKey
      * @param string $baseApiUrl
      */
-    protected function __construct($merchantId, $privateKey, $baseApiUrl = null)
+    protected function __construct($merchantId, $privateKey, $baseApiUrl)
     {
         $this->merchantId = $merchantId;
         $this->privateKey = $privateKey;
-        $this->baseApiUrl = $baseApiUrl === null ? self::BASE_API_URL : $baseApiUrl;
+        $this->baseApiUrl = $baseApiUrl;
 
         $this->httpClient = new GuzzleHttpClient($this->baseApiUrl);
     }
