@@ -31,12 +31,12 @@ trait NotifyWebhook
      * Verify notify request's signature and parse payload.
      *
      * @param array $payload
-     * @param string $secretKey
+     * @param string $publicKey
      * @return array|null
      */
-    public function parseNotifyPayload(array $payload, $secretKey)
+    public function parseNotifyPayload(array $payload, $publicKey)
     {
-        if (!$this->verifyNotifyPayload($payload, $secretKey)) {
+        if (!$this->verifyNotifyPayload($payload, $publicKey)) {
             return null;
         }
 
